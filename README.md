@@ -1,44 +1,72 @@
-# Debugging Lab: Broken Task Manager
+# Python Task Manager Debugging Lab
 
-This project is a **deliberately broken web application**. Your goal is to debug and fix it.
+This repository is a **GitHub-ready starter project** for a debugging lab.
 
-The application is supposed to:
+Students are given a small Flask-based Task Manager app that is **intentionally broken**.
+Their job is to identify and fix the bugs so the app can:
 
-- Add tasks
-- Display tasks
+- Load tasks
+- Add new tasks
 - Mark tasks as completed
 
-However, several bugs exist across the frontend and backend.
+## Tech Stack
 
-## Your Mission
+- Python
+- Flask
+- HTML
+- JavaScript
+- JSON file storage
 
-Find and fix the issues so the application works correctly.
+## Setup
 
-## Running the App
-
-Start a PHP server:
+Create and activate a virtual environment if you want, then install dependencies:
 
 ```bash
-php -S localhost:8000
+pip install -r requirements.txt
 ```
 
-Then open:
+Run the app:
 
-http://localhost:8000/index.html
+```bash
+python app.py
+```
 
-## Hints
+Open in a browser:
 
-The bugs may include:
+```text
+http://127.0.0.1:5000
+```
 
-- JavaScript errors
-- API request mistakes
-- Backend logic bugs
-- JSON parsing issues
+## Student Goal
 
 Use:
+- the browser console
+- the network tab
+- Flask terminal output
+- careful code reading
 
-- Browser DevTools Console
-- Network tab
-- Careful code reading
+to find and fix the bugs.
 
-Good luck!
+## Files
+
+```text
+python-task-manager-debug-starter/
+├── app.py
+├── requirements.txt
+├── tasks.json
+├── LAB_WORKSHEET.md
+├── INSTRUCTOR_NOTES.md
+├── templates/
+│   └── index.html
+└── static/
+    └── script.js
+```
+
+## Notes
+
+This repo includes multiple intentional issues across:
+- Python backend routes and logic
+- JavaScript frontend logic
+- JSON data formatting
+
+See `LAB_WORKSHEET.md` for the student handout.
