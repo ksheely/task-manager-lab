@@ -1,3 +1,17 @@
 [
-  {"id":"1","text":"Finish reading assignment","done":false},
+  {
+    "id": "1",
+    "text": "Finish reading assignment",
+    "done": true
+  },
+  {
+    "id": "234f2753-7450-40e5-8e5c-173200aff447",
+    "text": "task 1",
+    "done": true
+  },
+  {
+    "id": "5fc70fbe-2d7c-4f52-8b29-d960f7120b18",
+    "text": "task 2",
+    "done": true
+  }
 ]

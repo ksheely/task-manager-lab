@@ -66,9 +66,10 @@ What happens when the page loads?
 
 Write notes here:
 
-- 
-- 
-- 
+- The page does open but there is very minimal design
+- The tasks do not display even when you try to enter a task
+- Obvious errors are that you cannot add tasks to the task manager
+- the main broken item is that you cannot add tasks to the task manager
 
 ---
 
@@ -89,10 +90,10 @@ Look at:
 
 Write notes here:
 
-- 
-- 
-- 
-- 
+- Yes there is a 500 error (internal server error) and a 405 (Method Not Allowed) error in the script.js file
+- The api requests are failing due to these above http errors
+- The GET request fails first when you first try to load the page but the post after attempting to submit something also fails
+- 500 and 405
 
 ---
 
@@ -113,13 +114,13 @@ Look for problems involving:
 ### Frontend Fix Log
 List the bugs you found and fixed:
 
-1.  
-2.  
-3.  
+1.  The forEach loop in the Load tasks function had a syntax error (foreach)
+2.  The button "${task.id}" value needed quotes around it to display the tasks name when added to the list
+3.  These bugs where mostly syntax
 
 What changed after each fix?
 
-- 
+- Still got 405 errors for wrong method
 - 
 - 
 
@@ -141,14 +142,14 @@ Check:
 ### Backend Fix Log
 List the bugs you found and fixed:
 
-1.  
-2.  
+1.  app.route task needed to be tasks in order to be found by the frontend
+2.  In the `/tasks/<task_id>` route task['done'] was compared to True insded of being set to true
 3.  
 
 How did you verify each fix?
 
-- 
-- 
+- I verified that the routes matched the front end routes
+- I made sure that the task ID was actually set to a value insted of being compared to TRUE 
 - 
 
 ---
@@ -162,9 +163,9 @@ tasks.json
 ```
 
 Questions:
-1. Is the JSON valid?
-2. If not, what error does it cause?
-3. How do you correct it?
+1. Is the JSON valid? NO
+2. If not, what error does it cause? json.decoder.JSONDecodeError: Illegal trailing comma before end of array: line 2 column 61 (char 62)
+3. How do you correct it? Removed the column
 
 Write notes here:
 
@@ -178,9 +179,9 @@ Write notes here:
 
 Once fixed, verify that the app can:
 
-- [ ] Load tasks
-- [ ] Add a task
-- [ ] Mark a task complete
+- [X] Load tasks
+- [X] Add a task
+- [X] Mark a task complete
 
 Take a screenshot of the final working app.
 
@@ -189,9 +190,13 @@ Take a screenshot of the final working app.
 ## Reflection Questions
 
 1. Which bug was the hardest to find?
+    The hardest thing to find was the JSON comma error because I was focused on debugging the files one by one.
 2. Which debugging tool helped the most?
+    The dev tools in microsoft edge helped a lot along with github copilot
 3. What does this lab teach you about how software systems fail?
+    It teaches you that software systems can easily fail due to human error
 4. How might automated testing help catch bugs like these earlier?
+    Automated testing would have caught these bugs before a merge request preventing them from making it to production.
 
 ---
 

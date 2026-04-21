@@ -5,14 +5,14 @@ function loadTasks() {
       const list = document.getElementById("taskList");
       list.innerHTML = "";
 
-      tasks.foreach(task => { // BUG: should be forEach
+      tasks.forEach(task => { // BUG: should be forEach
         let li = document.createElement("li");
 
         if (task.done) {
           li.innerHTML = "<s>" + task.text + "</s>";
         } else {
           li.innerHTML = task.text +
-            ` <button onclick="completeTask(${task.id})">Done</button>`; // BUG: id should be quoted
+            ` <button onclick="completeTask('${task.id}')">Done</button>`; // BUG: id should be quoted
         }
 
         list.appendChild(li);

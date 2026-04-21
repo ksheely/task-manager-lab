@@ -18,7 +18,7 @@ def save_tasks(tasks):
 def home():
     return render_template("index.html")
 
-@app.route("/task", methods=["GET"])  # BUG: frontend expects /tasks
+@app.route("/tasks", methods=["GET"])  # BUG: frontend expects /tasks
 def get_tasks():
     return jsonify(load_tasks())
 
@@ -43,7 +43,7 @@ def complete_task(task_id):
 
     for task in tasks:
         if task["id"] == task_id:
-            task["done"] == True   # BUG: comparison instead of assignment
+            task["done"] = True   # BUG: comparison instead of assignment
 
     save_tasks(tasks)
     return jsonify({"status": "updated"})
